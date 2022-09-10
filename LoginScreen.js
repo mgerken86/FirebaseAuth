@@ -1,8 +1,11 @@
 import { KeyboardAvoidingView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { TextInput } from 'react-native-gesture-handler'
 
 const LoginScreen = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -11,14 +14,14 @@ const LoginScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput
           placeholder='Email'
-          // value={}
-          // onChangeText={text => }
+          value={email}
+          onChangeText={text => setEmail(text)}
           style={styles.input}
         />
         <TextInput
           placeholder='Password'
-          // value={}
-          // onChangeText={text => }
+          value={password}
+          onChangeText={text => setPassword(text)}
           style={styles.input}
           secureTextEntry
         />
